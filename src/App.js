@@ -1,10 +1,31 @@
 import React from 'react'
+import Header  from './components/Header';
+import Tasks from './components/Tasks';
+import { useState } from 'react';
 
-function App(){
+const App = () => {
+  const [tasks, setTasks] = useState([
+    {
+      id : 1,
+      name : 'wasif zaman omee',
+      bio : 'i am am enginner' 
+    },
+    {
+      id : 2,
+      name : 'md. rohim ahmed',
+      bio : 'he is a man'
+    },
+    {
+      id : 3,
+      name : 'md. korim ahmed',
+      bio : 'he is a teacher'
+    }
+  ])
 
     return (
-      <div class="container">
-        <h1>Hello World!</h1>
+      <div className='container'>
+        <Header />
+        <Tasks tasks={tasks}/>
       </div>
     )
 }
